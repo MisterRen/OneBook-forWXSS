@@ -1,0 +1,94 @@
+<view class="weui-panel weui-panel_access">
+    <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" bindtap='showSetting'>
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <view class="userinfo">
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" style='width:70px;height:70px;'/>
+        </view>
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">{{userInfo.nickName}}</view>
+        <view class="weui-media-box__desc">{{userInfo.province}}</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+</view>
+
+<view class="weui-panel">
+  <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_small-appmsg">
+          <view class="weui-cells weui-cells_in-small-appmsg">
+              <navigator url="../redirect/qianbao" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                  <view class="weui-cell__hd" style='height:25px'>
+                    <image src="{{iconPath.book}}" style="width: 25px;height: 25px;margin-right: 5px" />
+                  </view>
+                  <view class="weui-cell__bd weui-cell_primary">
+                      <view>总览</view>
+                  </view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              </navigator>
+          </view>
+      </view>
+  </view>
+</view>
+
+<view class="weui-panel">
+  <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_small-appmsg">
+          <view class="weui-cells weui-cells_in-small-appmsg">
+              <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap='naviTo'>
+                  <view class="weui-cell__hd" style='height:25px'>
+                    <image src="{{iconPath.collection}}" style="width: 25px;height: 25px;margin-right: 5px" />
+                  </view>
+                  <view class="weui-cell__bd weui-cell_primary">
+                      <view>收藏</view>
+                  </view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              </view>
+              <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap='naviTo'>
+                  <view class="weui-cell__hd" style='height:25px'>
+                    <image src="{{iconPath.like}}" style="width: 25px;height: 25px;margin-right: 5px" />
+                  </view>
+                  <view class="weui-cell__bd weui-cell_primary">
+                      <view>喜欢</view>
+                  </view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              </view>
+              <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap='naviTo'>
+                  <view class="weui-cell__hd" style='height:25px'>
+                    <image src="{{iconPath.dropIn}}" style="width: 25px;height: 25px;margin-right: 5px" />
+                  </view>
+                  <view class="weui-cell__bd weui-cell_primary">
+                      <view>借入</view>
+                  </view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              </view>
+              <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap='naviTo'>
+                  <view class="weui-cell__hd" style='height:25px'>
+                    <image src="{{iconPath.dropOut}}" style="width: 25px;height: 25px;margin-right: 5px" />
+                  </view>
+                  <view class="weui-cell__bd weui-cell_primary">
+                      <view>借出</view>
+                  </view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              </view>
+          </view>
+      </view>
+  </view>
+</view>
+<view class="weui-panel">
+  <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_small-appmsg">
+          <view class="weui-cells weui-cells_in-small-appmsg">
+              <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap='naviTo'>
+                  <view class="weui-cell__hd" style='height:25px'>
+                    <image src="{{iconPath.setting}}" style="width: 25px;height: 25px;margin-right: 5px" />
+                  </view>
+                  <view class="weui-cell__bd weui-cell_primary">
+                      <view>设置</view>
+                  </view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              </view>
+          </view>
+      </view>
+  </view>
+</view>

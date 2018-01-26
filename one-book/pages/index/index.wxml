@@ -1,0 +1,29 @@
+
+<view class="page__bd">
+    <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+                <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{q}}" bindblur='search' focus="{{inputShowed}}" bindinput="inputTyping" />
+                <view class="weui-icon-clear" wx:if="{{q.length > 0}}" bindtap="clearInput">
+                    <icon type="clear" size="14"></icon>
+                </view>
+            </view>
+            <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                <icon class="weui-icon-search" type="search" size="14"></icon>
+                <view class="weui-search-bar__text">搜索</view>
+            </label>
+        </view>
+        <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="scanCode">扫码</view>
+    </view>
+</view>
+<view class='container1'>
+  <navigator class='liImg' wx:for="{{books}}" wx:key="{{item.id}}" url='../bookDetail/detail?isbn={{item.isbn13}}&id={{item.id}}&bName={{item.subtitle}}'>
+      <label>
+        <image src='{{item.images.large}}'/>
+      </label>
+      <view class='label'>{{item.title}}</view>
+      <!--<view class='label'>作者：{{item.author}}</view>-->
+  </navigator>
+</view>

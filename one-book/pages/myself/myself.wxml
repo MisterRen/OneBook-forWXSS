@@ -17,7 +17,7 @@
   <view class="weui-panel__bd">
       <view class="weui-media-box weui-media-box_small-appmsg">
           <view class="weui-cells weui-cells_in-small-appmsg">
-              <navigator url="../redirect/qianbao" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+              <navigator url="../redirect/redirect" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                   <view class="weui-cell__hd" style='height:25px'>
                     <image src="{{iconPath.book}}" style="width: 25px;height: 25px;margin-right: 5px" />
                   </view>

@@ -19,11 +19,16 @@
     </view>
 </view>
 <view class='container1'>
-  <navigator class='liImg' wx:for="{{books}}" wx:key="{{item.id}}" url='../bookDetail/detail?isbn={{item.isbn13}}&id={{item.id}}&bName={{item.subtitle}}'>
+  <navigator class='liImg' wx:for="{{books}}" wx:key="{{item.id}}" url='../detail/bookDetail?isbn={{item.isbn13}}&id={{item.id}}&bName={{item.subtitle}}'>
       <label>
         <image src='{{item.images.large}}'/>
       </label>
       <view class='label'>{{item.title}}</view>
       <!--<view class='label'>作者：{{item.author}}</view>-->
   </navigator>
+  <input placeholder='输入消息...' value='{{message}}'></input>
+  <button bindtap='sendMsg'>发送消息</button>
+  <view wx:for='{{socketMsg}}'>
+    收到的消息:{{item}}
+  </view>
 </view>

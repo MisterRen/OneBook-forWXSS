@@ -4,8 +4,8 @@
     "pages/logs/logs",
     "pages/book/book",
     "pages/myself/myself",
-    "pages/redirect/qianbao",
-    "pages/bookDetail/detail"
+    "pages/redirect/redirect",
+    "pages/detail/bookDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -18,7 +18,7 @@
       {
         "pagePath": "pages/index/index",
         "iconPath": "pages/images/home-1.png",
-        "selectedIconPath":"pages/images/home-2.png",
+        "selectedIconPath": "pages/images/home-2.png",
         "text": "首页"
       },
       {

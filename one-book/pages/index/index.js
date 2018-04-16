@@ -1,7 +1,6 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
 Page({
   data: {
     motto: 'Hello World',
@@ -13,7 +12,9 @@ Page({
     c:10,
     total:0,
     pages:0,
-    books:[]
+    books:[],
+    socketMsg:[],
+    message:''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -22,7 +23,41 @@ Page({
     })
   },
   onLoad: function () {
-    
+    const _this = this;
+    var msg = [];
+    //url: 'wss://wspai.chexiangpre.com/socket/web/pm'
+    //url: 'wss://api.renxiansen.com/websocket'
+    var socketTask = wx.connectSocket({
+      url: 'wss://api.renxiansen.com/ws/web/pm?appOrigin=pm&auctionId=231',
+      header: {
+        'content-type': 'application/json'
+      },
+      method: "GET"
+    })
+
+    wx.onSocketOpen(function(res){
+      console.log("SOCKET已连接。。。。"+new Date());
+      socketTask.send({
+        data: '{"userId":1000000000000614,"auctionId":231,"pagId":"2600","message_type":"view","message_content":"addAuction","paaId":"1353"}'
+      });
+    })
+    wx.onSocketError(function (res) {
+      console.log('WebSocket连接打开失败，请检查！')
+    })
+    wx.onSocketMessage(function(res){
+      msg.push(res.data);
+      _this.setData({
+        socketMsg: msg
+      })
+    })
+    wx.onSocketClose(function(res){
+      console.log('WebSocket断开连接。。。' + new Date());
+    })
+  },sendMsg:function(msg){
+    const _this = this;
+    wx.sendSocketMessage({
+      data: '{"userId":1000000000000614,"auctionId":231,"pagId":"2600","message_type":"view","message_content":"addAuction","paaId":"1353"}'
+    })
   }, showInput: function () {
     console.log('showInput');
     this.setData({
